@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #007bff; /* Blue background color for the entire page */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            min-height: 100vh; /* Ensure the container takes the full viewport height */
+        }
+
+        .instruction-container {
+            background-color: #008000; /* Green background color in the middle */
+            width: 25%; /* Set the width to one-fourth of the page */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Center-align text within the container */
+        }
+
+        h1 {
+            color: #fff; /* White text color */
+            font-size: 3rem; /* Double the original font size (3rem is equivalent to 48px) */
+        }
+
+        p, ul, a {
+            color: #fff; /* White text color */
+            font-size: 1.5rem; /* 1.5 times the original font size */
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #0056b3; /* Darker blue for the button */
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #004280; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="instruction-container">
+        <h1>Exam Instructions</h1>
+        <form class="login-form" action="/login" method="GET">
+            <p>Before starting the exam, please read and follow these instructions:</p>
+        <ul>
+            <li>Ensure you have a stable internet connection.</li>
+            <li>Do not use any external materials or communication during the exam.</li>
+            <li>Each question has a time limit; make sure to manage your time wisely.</li>
+            <li>Click the "Start Exam" button to begin.</li>
+        </ul>
+            <button type="submit">START EXAM</button>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+        </form>
+        
+    </div>
+</body>
+</html>

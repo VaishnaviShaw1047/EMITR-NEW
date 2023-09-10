@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='quiz_completion.css') }}">
+
+    <title>Quiz Completion</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Completion</h1>
+        <div class="result">
+            <p>Total Marks Obtained: {{ marks_obtained }} / {{ total_marks }}</p>
+            <p>Percentage Obtained: {{ percentage_completion }}%</p>
+            <p>{{ message }}</p> <!-- Display the congratulatory or encouragement message -->
+        </div>
+        <div class="button-container">
+            <a href="/" class="btn">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

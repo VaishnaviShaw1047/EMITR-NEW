@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pagestyle.css') }}">
+    <title>CSS Login Screen Tutorial</title>
+    <script>
+        // JavaScript function to check if all radio buttons are selected
+        function checkAllSelected() {
+            var radioButtons = document.querySelectorAll('input[type="radio"]');
+            var allSelected = true;
+    
+            radioButtons.forEach(function (radioButton) {
+                if (!radioButton.checked) {
+                    allSelected = false;
+                }
+            });
+    
+            // Enable or disable the "Next" button based on whether all are selected
+            var nextButton = document.getElementById('next-button');
+            nextButton.disabled = !allSelected;
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="question-container">
+            {% set parent_index = 0 %}
+            <form action="/success/{{ next_page }}" method="POST">
+            {% for question in quiz_data %}
+            <div class="question">
+                <h2>Question {{ parent_index + loop.index }}</h2>
+                <p>{{ question.question }}</p>
+                    {% for option in question.options %}
+                    <label>
+                        <input id="options" type="checkbox" name="answer-{{ option}}" value="{{ option }}">
+                        {{ option }}
+                    </label>
+                    {% endfor %}  
+            </div>
+            {% endfor %}
+
+        <br><br>
+        
+        </div>
+        <div id="pagination">
+            <span id="page-info">Page {{ current_page }} of {{ number_of_page }}</span>
+            <input  id="next-button" type="submit" value="Submit" > <!-- Initially disabled -->
+        </div>
+    </form>
+        <p id="feedback"></p>
+        <!-- Display total marks scored till the previous page -->
+        <p>Total Marks Scored: {{ marks }}</p>
+
+        <!-- Display the percentage of remaining questions to attempt -->
+        <p>Remaining Questions After this Exercise: {{ remaining }}%</p>
+    </div>
+</body>
+</html>
